@@ -1,4 +1,6 @@
-def sparse_repr(matrix, dim):
+from typing import List, Tuple, Dict
+
+def sparse_repr(matrix: List[List[int]], dim: Tuple[int, int]) -> Dict[Tuple[int, int], int]:
     sparse = dict()
     for i in range(dim[0]):
         for j in range(dim[1]):
@@ -7,11 +9,11 @@ def sparse_repr(matrix, dim):
     return sparse
 
 
-def dim(matrix):
+def dim(matrix: List[List[int]]) -> Tuple[int, int]:
     return len(matrix), len(matrix[0])
 
 
-def sparse_matrix_multiplication(matrix_a, matrix_b):
+def sparse_matrix_multiplication(matrix_a: List[List[int]], matrix_b: List[List[int]]) -> List[List[int]]:
     # Write your code here.
     dim_a = dim(matrix_a)
     dim_b = dim(matrix_b)
